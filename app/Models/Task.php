@@ -9,9 +9,12 @@ class Task extends Model
 {
     use SoftDeletes;
     public $table = 'tasks';
-    protected $fillable = ['description'];
+    protected $fillable = ['title', 'description'];
 
-    public function isCompleted(){
+    public function isCompleted()
+    {
         return $this->completed_at !== null;
     }
+
+
 }

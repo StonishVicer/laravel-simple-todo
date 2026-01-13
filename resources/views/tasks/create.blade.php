@@ -17,6 +17,8 @@
             @csrf
 
             <div class="mb-3">
+                <label for="taskTitle" class="form-label">Task Title</label>
+                <input type="text" class="form-control" id="title" name="title" placeholder="Enter task title">
                 <label for="taskDescription" class="form-label">Task Description</label>
                 <input type="text" class="form-control" id="description" name="description" placeholder="Enter task description">
             </div>

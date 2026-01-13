@@ -11,10 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tasks', function (Blueprint $table) {
-            $table->id();
-            $table->string('description');
-            $table->timestamps();
+        Schema::table('tasks', function (Blueprint $table) {
+            $table->string('title')->default('Tarea sin título');
         });
     }
 
@@ -23,9 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tasks');
         Schema::table('tasks', function (Blueprint $table) {
-            $table->dropColumn(['title']);
+            $table->dropColumn(['completed_at']);
         });
     }
 };
